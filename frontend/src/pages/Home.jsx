@@ -15,6 +15,7 @@ function Home() {
     return(
         <div>
             <h2>All Products</h2>
+            {products.length > 0 ? ( 
             <div style={{ display:"flex", flexWrap:'wrap', gap:'20px' }}>
                 { products.map( product => (
                     <div key={product._id} style={{ border: '1px solid #ccc', padding: '10px'}}>
@@ -24,7 +25,9 @@ function Home() {
                         <p><strong>Rs: </strong>{product.price}</p>
                     </div>
                 ))}
-            </div>
+            </div>):(
+                <h3>No Products Available</h3>
+            )}
         </div>
     )
 }
